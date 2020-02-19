@@ -39,13 +39,16 @@ Number of unique consonant diacritic: 7
 ###  Most/Least Common Characters for each Component
 #### 1. Top 10 Grapheme Roots
 We looked at the graphemes with top 10 most common roots. Their grapheme root IDs were [72, 64, 13, 107, 23, 96, 113, 147, 133, 115].
+
 ```python
 def get_n(df, field, n, ascend=False):
   return pd.DataFrame(df[field].value_counts(ascending=ascend))[:n].rename_axis('id').reset_index()
 
 get_n(train_df, "grapheme_root", 10)
 ```
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top10_roots.png)
+
 ```python
 # top 10 most common grapheme roots
 top_10_roots = get_n(train_df, 'grapheme_root', 10)
@@ -53,7 +56,9 @@ sorted_indices = top_10_roots.sort_values(by="grapheme_root", ascending=False)["
 # would have prefered to use "component" instead of "index", but unicode isn't supported in the plot
 sns.barplot(x="id", y="grapheme_root", data=top_10_roots, order = sorted_indices).set_title("10 Most Common Roots by ID")
 ```
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top10_roots_bar.png)
+
 The following figure is 5 samples of grapheme for each IDs of 10 most commont roots.
 
 ```python
@@ -88,23 +93,40 @@ def make_contact_sheet(images, labels, ex_labels, num_samples):
 top10_root_labels = [72, 64, 13, 107, 23, 96, 113, 147, 133, 115]
 make_contact_sheet(train_images_0, train_label['grapheme_root'], top10_root_labels, 5)
 ```
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top_grapheme_roots.png)
+
 #### 2. Bottom 10 Grapheme Roots
 Then, we looked at the graphemes with bottom 10 least common roots. Their grapheme root IDs were [63, 0, 12, 1, 130, 45, 158, 102, 33, 73].
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/bottom10_roots_bar.png)
+
 The following figure is 5 samples of grapheme for each IDs of 10 least common roots.
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/bottom_grapheme_roots.png)
+
 #### 3. Top 5 Vowels
+
 After the grapheme roots, we looked at top 5 most common vowels. Their vowel diacritic IDs were [0, 1, 7, 2, 4].
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top5_vowels_bar.png)
+
 The following figure is 5 samples of grapheme for each IDs of 5 most common vowels.
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/vowels.png)
+
 #### 4. All 7 Consonants
+
 After the grapheme roots, we looked at all 7 consonants. Their vowel diacritic IDs were [0, 2, 5, 4, 1, 6, 3].
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top5_consonants_bar.png)
+
 The following figure is 5 samples of grapheme for each IDs of 7 consonants.
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/consonant.png)
+
 #### 5. Top 10 Combinations
+
 Lastly, we looked at the graphemes in which are the 10 most common combinations of **grapheme_root**, **vowel_diacritic**, and **consonant_diacritic**.
 
 **Quantifying the Most Common Combinations**
@@ -128,8 +150,11 @@ output:
  ((103, 1, 0), 177),
  ((96, 9, 5), 177)]
 ```
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top10_combos.png)
-The following figure is a sample for each most common combination of componenets.
+
+The following figure is a sample for each most common combination of components.
+
 ![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/combinations.png)
 
 ### Conclusion of Component EDA
