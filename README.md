@@ -20,6 +20,8 @@ train_df.head()
 ```
 ![alt text](../csjasonchan357/bengali-char-recognition/figures/df_head.png)
 
+![help](https://github.com/csjasonchan357/bengali-char-recognition/tree/master/figures/df_head.png)
+
 <img src="../csjasonchan357/bengali-char-recognition/figures/df_head.png">
 
 
