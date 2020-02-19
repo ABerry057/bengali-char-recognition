@@ -12,7 +12,7 @@ This project involves classifying handwritten characters of the Bengali alphabet
 Before we begin working on a baseline model, we decided to perform some exploratory data analysis in order to understand the data better. In particular, we are working with several types of data. Firstly, we have a training csv file which lists the correct root, vowel diacritic, and consonant diacritic, for each one of the training graphemes. These graphemes have an id which corresponds to image data, originally saved in parquet form, but we then parce them into png's to be more accessible in building a neural network and visualizing the data.
 
 ## Exploratory Data Analysis (EDA) in the Training Set
-There are 2 types of training data: labels and images. For each id, we have an image data in **train_image_data.parquet** and label data in **train.csv**. There are total of 200840 samples, where each each image of Bengali consists of 32330 pixels (approx. 137 $\times$ 236), and 3 labels: **grapheme_root**, **vowel_diacritic**, and **consonant_diacritic**. We downloaded *kalpurush font ** to make sure the graphemes are proper
+There are 2 types of training data: labels and images. For each id, we have an image data in **train_image_data.parquet** and label data in **train.csv**. There are total of 200840 samples, where each each image of Bengali consists of 32330 pixels (approx. 137 $\cdot$ 236), and 3 labels: **grapheme_root**, **vowel_diacritic**, and **consonant_diacritic**. We downloaded **kalpurush font** to make sure the graphemes are proper
 
 ```python
 train_df = pd.read_csv('train.csv')
