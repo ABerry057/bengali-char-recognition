@@ -20,6 +20,8 @@ train_df.head()
 ```
 ![alt text](/csjasonchan357/bengali-char-recognition/figures/df_head.png)
 
+<img src="/csjasonchan357/bengali-char-recognition/figures/df_head.png">
+
 
 ### Unique Values
 We explored the number of unique grapheme roots, vowel diacritic, and consonant diacritic.
