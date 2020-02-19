@@ -18,11 +18,9 @@ There are 2 types of training data: labels and images. For each id, we have an i
 train_df = pd.read_csv('train.csv')
 train_df.head()
 ```
-![alt text](../csjasonchan357/bengali-char-recognition/figures/df_head.png)
 
 ![help](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/df_head.png)
 
-<img src="../csjasonchan357/bengali-char-recognition/figures/df_head.png">
 
 
 ### Unique Values
@@ -47,7 +45,7 @@ def get_n(df, field, n, ascend=False):
 
 get_n(train_df, "grapheme_root", 10)
 ```
-![alt text](../figures/top10_roots.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top10_roots.png)
 ```python
 # top 10 most common grapheme roots
 top_10_roots = get_n(train_df, 'grapheme_root', 10)
@@ -55,7 +53,7 @@ sorted_indices = top_10_roots.sort_values(by="grapheme_root", ascending=False)["
 # would have prefered to use "component" instead of "index", but unicode isn't supported in the plot
 sns.barplot(x="id", y="grapheme_root", data=top_10_roots, order = sorted_indices).set_title("10 Most Common Roots by ID")
 ```
-![alt text](../figures/top10_roots_bar.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top10_roots_bar.png)
 The following figure is 5 samples of grapheme for each IDs of 10 most commont roots.
 
 ```python
@@ -90,22 +88,22 @@ def make_contact_sheet(images, labels, ex_labels, num_samples):
 top10_root_labels = [72, 64, 13, 107, 23, 96, 113, 147, 133, 115]
 make_contact_sheet(train_images_0, train_label['grapheme_root'], top10_root_labels, 5)
 ```
-![alt text](../figures/top_grapheme_roots.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top_grapheme_roots.png)
 #### 2. Bottom 10 Grapheme Roots
 Then, we looked at the graphemes with bottom 10 least common roots. Their grapheme root IDs were [63, 0, 12, 1, 130, 45, 158, 102, 33, 73].
-![alt text](../figures/bottom10_roots_bar.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/bottom10_roots_bar.png)
 The following figure is 5 samples of grapheme for each IDs of 10 least common roots.
-![alt text](../figures/bottom_grapheme_roots.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/bottom_grapheme_roots.png)
 #### 3. Top 5 Vowels
 After the grapheme roots, we looked at top 5 most common vowels. Their vowel diacritic IDs were [0, 1, 7, 2, 4].
-![alt text](../figures/top5_vowels_bar.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top5_vowels_bar.png)
 The following figure is 5 samples of grapheme for each IDs of 5 most common vowels.
-![alt text](../figures/vowels.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/vowels.png)
 #### 4. All 7 Consonants
 After the grapheme roots, we looked at all 7 consonants. Their vowel diacritic IDs were [0, 2, 5, 4, 1, 6, 3].
-![alt text](../figures/top5_consonants_bar.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top5_consonants_bar.png)
 The following figure is 5 samples of grapheme for each IDs of 7 consonants.
-![alt text](../figures/consonant.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/consonant.png)
 #### 5. Top 10 Combinations
 Lastly, we looked at the graphemes in which are the 10 most common combinations of **grapheme_root**, **vowel_diacritic**, and **consonant_diacritic**.
 
@@ -130,9 +128,9 @@ output:
  ((103, 1, 0), 177),
  ((96, 9, 5), 177)]
 ```
-![alt text](../figures/top10_combos.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/top10_combos.png)
 The following figure is a sample for each most common combination of componenets.
-![alt text](../figures/combinations.png)
+![alt text](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/combinations.png)
 
 ### Conclusion of Component EDA
 
