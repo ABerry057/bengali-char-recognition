@@ -5,14 +5,14 @@ DATA 2040: Deep Learning
 February 18th, 2020
 
 ### Bengali.AI Handwritten Grapheme Classification Kaggle Competition
-This is the first blog post by our team, Berry Bengali, participating in the Bengali AI Kaggle competition, whose linke can be found [here](https://www.kaggle.com/c/bengaliai-cv19/overview).
+This is the first blog post by our team, Berry Bengali, participating in the Bengali AI Kaggle competition, whose link can be found [here](https://www.kaggle.com/c/bengaliai-cv19/overview).
 
 This project involves classifying handwritten characters of the Bengali alphabet, similar to classifying integers in the MNIST data set. In particular, the Bengali alphabet is broken down into three components for each grapheme, or character: 1) the root, 2) the vowel diacritic, 3) the consonant diacritic, where a diacritic is similar to an accent. The goal is the create a classification model that can classify each of these three components of a handwritten grapheme, and the final result is measured using the recall metrics, with double weight given to classification of the root.
 
 Before we begin working on a baseline model, we decided to perform some exploratory data analysis in order to understand the data better. In particular, we are working with several types of data. Firstly, we have a training csv file which lists the correct root, vowel diacritic, and consonant diacritic, for each one of the training graphemes. These graphemes have an id which corresponds to image data, originally saved in parquet form, but we then parce them into png's to be more accessible in building a neural network and visualizing the data.
 
 ## Exploratory Data Analysis (EDA) in the Training Set
-There are 2 types of training data: labels and images. For each id, we have an image data in **train_image_data.parquet** and label data in **train.csv**. There are total of 200840 samples, where each each image of Bengali consists of 32330 pixels (approx. 137 $\cdot$ 236), and 3 labels: **grapheme_root**, **vowel_diacritic**, and **consonant_diacritic**. We also downloaded **kalpurush** font to make sure the actual bengali graphemes are displayed rather than messy unicode. 
+There are 2 types of training data: labels and images. For each id, we have an image data in **train_image_data.parquet** and label data in **train.csv**. There are total of 200840 samples, where each each image of Bengali consists of 32330 pixels (approx. 137 x 236), and 3 labels: **grapheme_root**, **vowel_diacritic**, and **consonant_diacritic**. We also downloaded **kalpurush** font to make sure the actual bengali graphemes are displayed rather than messy unicode.
 
 ```python
 train_df = pd.read_csv('train.csv')
