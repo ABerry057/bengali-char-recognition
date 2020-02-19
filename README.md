@@ -18,7 +18,7 @@ There are 2 types of training data: labels and images. For each id, we have an i
 train_df = pd.read_csv('train.csv')
 train_df.head()
 ```
-![alt text](csjasonchan357/bengali-char-recognition/figures/df_head.png)
+![alt text](/csjasonchan357/bengali-char-recognition/figures/df_head.png)
 
 
 ### Unique Values
