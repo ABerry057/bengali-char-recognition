@@ -136,7 +136,7 @@ The following figure is a sample for each most common combination of componenets
 
 In the training set, the most common root graphemes are 72, 64, and 13 and the last common are 63, 0, and 12. The most common vowel diacritics are 0, 1, and 7. The most common consonant diacritics are 0, 2, and 5. The most common combinations of components are mostly just combinations of the most common components, which is expected. The most common combinations are 64-7-2, 72-0-2, and 64-3-2.
 
-### Baseline Model Identification
+## Baseline Model Identification
 Before we begin training a neural network, we're first interested in looking at the balance of the data set, and analyzing a baseline model. Here we define a baseline model to be a basic model which chooses the most populous class (the majority class) and makes that classification for every possible data point.
 
 To specify, in this competition, our goal is the break down each grapheme into three components. The final evaluation metric is a weighted average between the recall scores based on the classification for the root, vowel diacritic, and consonant diacritic. In other words, for each grapheme, for each of these three components, a predicition will be made, and the recall score will be measured based on the true labels. From there, a weighted average is taken where the root recall score has two times the weight of the vowel and consonant diacritic scores, resulting in one final metric.
@@ -158,7 +158,7 @@ With the above code, we are able to find the majority class and balance of the e
 |e.g. র্দি| e.g. র্ব্য| e.g. ষী|
 |balance = 2.9%| balance = 20.7%| balance = 62.4%|
 
-### Baseline Model Analysis
+## Baseline Model Analysis
 
 Therefore, the baseline model would predict root = 72, vowel diacritic = 0, and consonant = 0, for every data point. Just by observing the balance of the classes, we can see that this baseline model is unlikely to provide good predictions at all. In fact, due to the extra weight placed on the root classification, and the low balance for both root and vowel diacritic, and the nature that each of these target labels are multi-class labels, our baseline model will most certainly produce only a mediocre result. This is good, as it gives us plenty of space to improve our model and make use of our convolutional neural nets.  
 
@@ -189,5 +189,5 @@ In the table below, we see the recall scores for each of the components, as well
 As we can see, each individual recall score is very low, and our final weighted average recall score is abysmal. Again, this is largely due to the fact that each of these component classifications are multi-class labels, and in general there are much less overlap in combinations of characters, given there are so many possibilities, and we are looking at our data in the context of a real life language, used to convey the entirety of humanity in one particular language. Thus, this baseline analysis does not provide a strong baseline comparison, due to the fact that even a simple neural network model would be able to outperform this baseline.
 
 
-### Next Steps
+## Next Steps
 In fact, creating a simple neural network model and iterating it is in the next steps in our competition project process. First we will preprocess the image data further. This includes de-noising it, adding a threshhold filter to it (to turn it from greyscale to black and white, essentially define the outlines of the written parts more clearly), contour it (make a bounding box and use only parts of the image that contain important information, essentially get rid of white space), and rescale it. From there, we will build a model with both convolutional layers, in order to extract feature information about the images, and then split the model into three dense layers which serve as producing the output classifications for the three components. We are looking forward to implementing all of this!
