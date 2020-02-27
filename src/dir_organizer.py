@@ -20,22 +20,18 @@ for split in ["train", "test"]:
     # read key table
     key_df = pd.read_csv(f'{data_dir}/{split}.csv')
     dir_pairs = 0
-    print("before read_pq")
     # read through pq files
     for i in range(4):
         # read current pq file, already proccessed
-        # current_pq = pq.read_table(f'{data_dir}/{split}_image_data_{i}.parquet').to_pandas()
-        current_pq = pq.read_table("/home/alex/Desktop/deep_learning/midterm/bengali-char-recognition/data/berrybengali_preprocessed_wid_0.parquet").to_pandas()
-        print("just read pq")
-        # PERFORM PREPROCESSING?
+        current_pq = pq.read_table(f'{data_dir}/{split}_image_data_{i}.parquet').to_pandas()
+
         for row in current_pq.iterrows():
             ID = row[1]["image_id"]
             key_row = key_df[key_df.image_id == ID]
             labels = (key_row["grapheme_root"].values[0],
                       key_row["vowel_diacritic"].values[0],
                       key_row["consonant_diacritic"].values[0])
-            # im = row[1].drop("image_id").to_numpy().reshape(137,236)
-            im = row[1].drop("image_id").to_numpy().reshape(106,87)
+            im = row[1].drop("image_id").to_numpy().reshape(87,106) * 255.0
             cv2.imwrite(f'{split_dir}/{ID}.png', np.float32(im))
             with open(f'{split_dir}/{ID}.text', "w") as text_file:
                 print(f"{labels}", file=text_file)
@@ -44,7 +40,6 @@ for split in ["train", "test"]:
             del labels
             del key_row
             del ID
-        break
         del current_pq
     del key_df
     del split_dir_path
