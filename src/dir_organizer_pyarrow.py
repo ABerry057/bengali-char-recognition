@@ -24,8 +24,9 @@ for split in ["train", "test"]:
     # read through pq files
     for i in range(4):
         # read current pq file, already proccessed
-        # current_pq = pq.read_table(f'{data_dir}/{split}_image_data_{i}.parquet').to_pandas()
-        current_pq = pq.read_table("/home/alex/Desktop/deep_learning/midterm/bengali-char-recognition/data/berrybengali_preprocessed_wid_0.parquet").to_pandas()
+        # current_pq = pd.read_parquet(f'{data_dir}/{split}_image_data_{i}.parquet')
+        # current_pq = pd.read_parquet("/home/alex/Desktop/deep_learning/midterm/bengali-char-recognition/data/berrybengali_preprocessed_test.parquet")
+        current_pq = pq.read_table("/home/alex/Desktop/deep_learning/midterm/bengali-char-recognition/data/berrybengali_preprocessed_test.parquet").to_pandas()
         print("just read pq")
         # PERFORM PREPROCESSING?
         for row in current_pq.iterrows():
