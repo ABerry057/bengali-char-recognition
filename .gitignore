@@ -3,3 +3,4 @@ train_image_data_1.parquet
 train_image_data_2.parquet
 train_image_data_3.parquet
 berrybengali_model.h5
+final_model_v1.h5
