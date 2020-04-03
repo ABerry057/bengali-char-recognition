@@ -45,9 +45,9 @@ Please also refer to [our blog](https://aberry057.github.io/) for more informati
 
 1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
 2. Find the competition background and data [here](https://www.kaggle.com/c/bengaliai-cv19/overview).
-3. All figures, including EDA, are found [here](https://github.com/csjasonchan357/bengali-char-recognition/tree/master/figures))
-4. Classification models are found [here](https://github.com/csjasonchan357/bengali-char-recognition/tree/master/models))
-5. Blog posts in notebook format are found [here](https://github.com/csjasonchan357/bengali-char-recognition/tree/master/reports))
+3. All figures, including EDA, are found [here](https://github.com/csjasonchan357/bengali-char-recognition/tree/master/figures)
+4. Classification models are found [here](https://github.com/csjasonchan357/bengali-char-recognition/tree/master/models)
+5. Blog posts in notebook format are found [here](https://github.com/csjasonchan357/bengali-char-recognition/tree/master/reports)
 6. See the LICENSE for permitted use or redistribution of this software
 
 ## Contributors
