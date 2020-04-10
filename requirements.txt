@@ -1,0 +1,10 @@
+cv2 4.2.0
+json 2.0.9
+keras 2.2.4
+numpy 1.18.1
+pandas 1.0.1
+PIL 7.0.0
+pyarrow 0.14.1
+seaborn 0.10.0
+tensorflow : 2.2.0
+tqdm 4.38.0
