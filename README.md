@@ -1,5 +1,5 @@
 
-# Bengali Character Regcognition
+# Bengali Character Recognition
 
 ![Sample Bengali Characters](https://github.com/csjasonchan357/bengali-char-recognition/raw/master/figures/consonant.png)
 
